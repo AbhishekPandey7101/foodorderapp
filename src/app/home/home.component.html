@@ -1,0 +1,23 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<app-not-found [visible]="!foods || foods.length<= 0"> </app-not-found>
+<ul>
+    <li *ngFor="let food of foods">
+        <a routerLink="/food/{{food.id}}">
+            <img src="{{food.imageUrl}}" alt="foodimages">
+            <div class="content">
+
+                <div style="color: blue" class="name">
+                    {{food.name}}
+                </div>
+                <div class="price">
+                    Price :{{food.price}}
+                </div>
+                <div style="color: rgb(94, 94, 29);" class="stars">
+                    {{food.stars}}⭑
+                </div>
+
+            </div>
+        </a>
+    </li>
+</ul>
